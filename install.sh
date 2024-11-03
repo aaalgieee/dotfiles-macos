@@ -11,6 +11,12 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Add Homebrew to the PATH
+echo "Adding Homebrew to the PATH..."
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/al/.config/fish/config.fish
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 # Update Homebrew
 echo "Updating Homebrew..."
 brew update
@@ -22,7 +28,6 @@ echo "Installing essential packages..."
 brew install -q wget
 brew install -q fish
 brew install -q git
-brew install -q node
 brew install -q gh
 brew install -q cocoapods
 brew install -q asitop
@@ -31,14 +36,14 @@ brew install -q python@3.12
 
 # Install applications
 echo "Installing applications..."
-brew install --cask -q google-chrome
-brew install --cask -q visual-studio-code
-brew install --cask -q rectangle
-brew install --cask -q iina
-brew install --cask -q alt-tab
-brew install --cask -q cursor
-brew install --cask -q flutter
-brew install --cask -q dbeaver-community
+brew install  -q google-chrome
+brew install  -q visual-studio-code
+brew install  -q rectangle
+brew install  -q iina
+brew install  -q alt-tab
+brew install  -q cursor
+brew install  -q flutter
+brew install  -q dbeaver-community
 
 
 # Set up Git
